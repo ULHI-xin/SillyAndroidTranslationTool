@@ -16,7 +16,9 @@ How to use
 Clone the repo
 
 Duplicate config example file to a real js file by:
-> cp SATTConfig.js.example SATTConfig.js
+```bash
+cp SATTConfig.js.example SATTConfig.js
+```
 
 Edit all the config fields in SATTConfig.js, including **androidResPath**, **port** and **targetLanguage**
 
