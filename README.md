@@ -10,3 +10,16 @@ Prerequisites
 `Nodejs` (http://nodejs.org/download/)
 
 `xml2js` (https://github.com/Leonidas-from-XIV/node-xml2js, for short: [npm](http://npmjs.org) install xml2js -g)
+
+How to use
+----------
+Clone the repo
+
+Duplicate config example file to a real js file by:
+> cp SATTConfig.js.example SATTConfig.js
+
+Edit all the config fields in SATTConfig.js, including **androidResPath**, **port** and **targetLanguage**
+
+Start nodejs server with [translate.js](/translate.js)
+
+Visit [localhost:PORT](http://localhost:PORT) to edit strings
