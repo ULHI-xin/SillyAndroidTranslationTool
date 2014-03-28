@@ -1,0 +1,18 @@
+// Config the absolute path of android res:
+// Example:
+//androidResPath = "$WORKSPACE/REPO_NAME/src/android/PROJ_NAME/res/";
+androidResPath = "../res/";
+
+// Config the port of nodejs:
+port = 6742;
+
+// Config the target language:
+targetLanguage = "zh";
+
+if (typeof exports === undefined) {
+    exports = {};
+}
+
+exports.androidResPath = androidResPath;
+exports.port = port;
+exports.targetLanguage = targetLanguage;
