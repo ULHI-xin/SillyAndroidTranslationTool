@@ -24,7 +24,6 @@ http.createServer(function(req, res){
         });
         req.on('end', function() {
             var formData = qs.parse(requestBody);
-            //console.log(formData.result);
             var xmlString = save(JSON.parse(formData.result));
             var fs = require('fs');
                 fs.writeFile(androidResPath + "values-" + conf.targetLanguage + "/_strings_copy.xml", xmlString, function(err) {
@@ -87,11 +86,9 @@ function findStringArrayInTranslated(stringArrays, name) {
 function findPluralInTranslated(plurals, name) {
     for (var x in plurals){
         if (name == plurals[x]['$'].name) {
-            console.log(name);
             return plurals[x].item;
         } 
     }
-    console.log('dame ');
     return [];
 }
 
@@ -122,7 +119,6 @@ function organize(base, translated) {
         }
     }
     var baseStringArrays = base.resources['string-array'];
-    //console.log(baseStringArrays);
     for (var x in baseStringArrays) {
         var name = baseStringArrays[x]['$'].name;
         var foundValue = findStringArrayInTranslated(translated.resources['string-array'], name);
@@ -137,7 +133,6 @@ function organize(base, translated) {
         });
     }
     var basePlurals = base.resources.plurals;
-    //console.log(baseStringArrays);
     for (var x in basePlurals) {
         var name = basePlurals[x]['$'].name;
         var foundValue = findPluralInTranslated(translated.resources.plurals, name);
